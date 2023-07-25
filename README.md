@@ -110,6 +110,7 @@ Answer: The above query shows that the product "Ballpoint LED Light Pen" is the 
  * There are lot of null values in the transaction id and transaction revenue columns making it difficult to calculate revenue based upon each transaction
  * The same holds good for the totaltransactionsrevenue column. only 81 out or 15k columns have the totaltransactionrevenue data populated making it difficult to calculate aggregate values for all the transaction
  * Itemrevnue and Itemquantity columns were null due to which itemized revenue generated could not be calculated
+ * Also identified while generating ERD that we cannot have a foreign key relationship between products and sales_by_sku table as there are certain productsku which are present in sales_by_sku but not in the products table
 
 ## Future Goals
 * Ensure that we could create customized sequence columns to introduce primary keys for proper data integrity and relationships
