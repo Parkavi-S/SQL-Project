@@ -38,7 +38,7 @@ Followed by Los Angeles from UnitedStates and Sydney from Australia taking 4th a
 
  select a.city, avg(b.total_ordered) as avgpdtsordered
  from public.all_sessions as a
- join public.sales_by_sku as b on a.productsku = b.productsku
+ join public.sales_report as b on a.productsku = b.productsku
  group by a.city
  having count(b.total_ordered)>1
  order by avgpdtsordered DESC;
@@ -47,7 +47,7 @@ Followed by Los Angeles from UnitedStates and Sydney from Australia taking 4th a
 
 select a.country, avg(b.total_ordered) as avgpdtsordered
  from public.all_sessions as a
- join public.sales_by_sku as b on a.productsku = b.productsku
+ join public.sales_report as b on a.productsku = b.productsku
  group by a.country
  having count(b.total_ordered)>1
  order by avgpdtsordered DESC;
