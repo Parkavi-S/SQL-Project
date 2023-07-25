@@ -54,5 +54,3 @@ order by product_count desc
 ![image](https://github.com/Parkavi-S/SQL-Project/assets/67069604/163baa6f-7ce0-4f08-bbf9-5439401114be)
 
 
-
-Answer:
