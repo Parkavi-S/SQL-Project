@@ -3,13 +3,27 @@ Answer the following questions and provide the SQL queries used to find the answ
     
 **Question 1: Which cities and countries have the highest level of transaction revenues on the site?**
 
-
 SQL Queries:
+WITH CTE_REV AS
+(
+select 	country,
+		city, 
+		max(totaltransactionrevenue) max_tot_trans_rev
+ from public.all_sessions a
+where totaltransactionrevenue is not null
+group by a.country, city
+)
+Select country,
+		city,
+			max_tot_trans_rev
+FROM CTE_REV
+where city is not null
+order by max_tot_trans_rev desc
 
+Answer: The query gives an ouput of 56 combinations of country and their corresponding cities, out of which Atlanta from Unitedstates, Sunnyvale from Unitedstates and Tel Aviv- Yafo from Israel holds the top 3 positions based on the total transaction revenues.
+Followed by Los Angeles from UnitedStates and Sydney from Australia taking 4th and 5th positions.
 
-
-Answer:
-
+![image](https://github.com/Parkavi-S/SQL-Project/assets/67069604/e29b79ac-9313-48cf-8a56-66860a2ad516)
 
 
 
