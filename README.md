@@ -85,6 +85,8 @@ CSV HEADER ;
 
  * Ensured there are no duplicates in the unique value columns
  * Ensured there are no nulls in the primary key columns
+ * Validated the dataset consistency across the tables, for data type constraints
+ * Identifying outliers and investigating data points that has deviations from expected value range
 
 ## Results
 (fill in what you discovered this data could tell you and how you used the data to answer those questions)
