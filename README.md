@@ -89,10 +89,30 @@ CSV HEADER ;
  * Identifying outliers and investigating data points that has deviations from expected value range
 
 ## Results
-(fill in what you discovered this data could tell you and how you used the data to answer those questions)
+
+Question 1: What is the highest of product viewed in United States and what is the sales for the same from the sales report vs ordered quantity
+
+Answer: The above query shows that the product that has highest views and orders is " Men's 100% Cotton Short Sleeve Hero Tee White" which belongs to the "Men's T-Shirts" product Category, which resonates the results of starting with questions
+
+Question 2: What are the different split for the above product by channel grouping and other observations related to the product
+
+Answer: On research product sku - GGOEGAAX0104 - which is - Men's 100% Cotton Short Sleeve Hero Tee White that is being most searched on the web page from United states. Out of these searches- most of the page hits are related organic search channel grouping. Also the product price does vary within the same product, based on the type how the product is searched. If the product is searched through organic search, the price is 16.99 USD, but if it is searched via referral it is 13.59 USD
+
+Question 3: Which is the product that has the most total sales across the world
+
+Answer: The above query shows that the product "Ballpoint LED Light Pen" is the most sold product across the world.
 
 ## Challenges 
-(discuss challenges you faced in the project)
+
+ * Analytics table had lot of duplicate entries and required a clean up which brought the data from 4 million to 1.5 million rows
+ * There is no proper primary keys to be created in the all_sessions and analytics table
+ * The fullvisitorid from all_sessions did not have match with the fullvisitorid in the analytics table, this behaviour was also noticed with the visitid column
+ * There are lot of null values in the transaction id and transaction revenue columns making it difficult to calculate revenue based upon each transaction
+ * The same holds good for the totaltransactionsrevenue column. only 81 out or 15k columns have the totaltransactionrevenue data populated making it difficult to calculate aggregate values for all the transaction
+ * Itemrevnue and Itemquantity columns were null due to which itemized revenue generated could not be calculated
 
 ## Future Goals
-(what would you do if you had more time?)
+* Ensure that we could create customized sequence columns to introduce primary keys for proper data integrity and relationships
+* Understand the business terms for each data and the proper calculations for the aggregate values based on key indicators
+* Introduce stored procedural concepts to handle data loads wherever possible
+* Had opportunity to use window functions as part of this project, but in the future would work on converting them to user defined functions and re use them wherever appropriate
