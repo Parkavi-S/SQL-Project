@@ -23,7 +23,8 @@ order by max_tot_trans_rev desc
 Answer: The query gives an ouput of 56 combinations of country and their corresponding cities, out of which Atlanta from Unitedstates, Sunnyvale from Unitedstates and Tel Aviv- Yafo from Israel holds the top 3 positions based on the total transaction revenues.
 Followed by Los Angeles from UnitedStates and Sydney from Australia taking 4th and 5th positions.
 
-![image](https://github.com/Parkavi-S/SQL-Project/assets/67069604/e29b79ac-9313-48cf-8a56-66860a2ad516)
+![image](https://github.com/Parkavi-S/SQL-Project/assets/67069604/9c83ccae-3ba4-4984-b92b-37a542fdb844)
+
 
 
 
