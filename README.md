@@ -81,6 +81,11 @@ CSV HEADER ;
 * Created the Total_Transaction_Revenue column for summarizing the impact of revenue generated
 * Worked on building the query and answering the starting with questions section
 
+### ERD Generated for the eCommerce database
+
+![image](https://github.com/Parkavi-S/SQL-Project/assets/67069604/ce852e08-218e-40aa-8aa1-c2f1fe46f54b)
+
+
 ### QA the data to exclude obvious errors, nulls and outliers
 
  * Ensured there are no duplicates in the unique value columns
