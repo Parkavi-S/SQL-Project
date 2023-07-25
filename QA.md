@@ -12,49 +12,36 @@
 
 **1. Ensured the key columns did not have any null values in it**
 
-select * from public.analytics where units_sold is not null
+select * from public.all_sessions where (fullvisitorid is null or visitid is null)
+![image](https://github.com/Parkavi-S/SQL-Project/assets/67069604/64f6db74-53ed-4fe8-ad95-1db16d2a5dc4)
 
-**2. Made the revenue columns consistent across the all_sessions table - created three new columns to handle the casting of data type as below:**
 
-	update all_sessions a
-	set total_transaction_revenue =TOT_TRANS_REV
-	FROM (
-	    SELECT totaltransactionrevenue, (cast(totaltransactionrevenue as double precision) / 1000000) TOT_TRANS_REV
+select * from public.sales_report where total_ordered is null
+![image](https://github.com/Parkavi-S/SQL-Project/assets/67069604/e3e86546-fae0-4707-8be7-9695bb8a8e33)
+
+
+**2. Validated the dataset consistency across the tables, for data type constraints**
+
+		SELECT totaltransactionrevenue, (cast(totaltransactionrevenue as double precision) / 1000000) TOT_TRANS_REV
 		FROM all_sessions
 		WHERE totaltransactionrevenue is not null
-	 ) b
-	WHERE a.totaltransactionrevenue =b.totaltransactionrevenue
-
-
-	update all_sessions a
-	set product_revenue =PROD_REV
-	FROM (
+	
 	    SELECT productrevenue, (cast(productrevenue as double precision) / 1000000) PROD_REV
 		FROM all_sessions
 		WHERE productrevenue is not null
-	 ) b
-	WHERE a.productrevenue =b.productrevenue
-
-	update all_sessions a
-	set transaction_revenue =TRANS_REV
-	FROM (
+	
+	
 	    SELECT transactionrevenue, (cast(transactionrevenue as double precision) / 1000000) TRANS_REV
 		FROM all_sessions
 		WHERE transactionrevenue is not null
-	 ) b
-	WHERE a.transactionrevenue =b.transactionrevenue
-	
-**3. Worked on creating a consistent dataset across the tables, such as maintaining the datatypes for the revenue and units_sold in the analytics table**
 
-	ALTER TABLE public.analytics
-	ALTER COLUMN units_sold type int
-	USING units_sold::Integer
+  	  	select revenue, units_sold from public.analytics
 
-	ALTER TABLE public.analytics
-	ALTER COLUMN revenue type int
-	USING revenue::Integer
+  	select time, timeonsite from public.all_sessions limit 10
+   	![image](https://github.com/Parkavi-S/SQL-Project/assets/67069604/eecd521b-8d4f-4a16-b3e5-a44518c0af5c)    	
 
-**4. Identifying outliers and investigating data points that has deviations from expected value range**
+
+**3. Identifying outliers and investigating data points that has deviations from expected value range**
 
 	select min(total_ordered) from public.sales_report
 
